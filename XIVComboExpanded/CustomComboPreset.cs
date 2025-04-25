@@ -176,11 +176,13 @@ public enum CustomComboPreset
 
     [SectionCombo("Draw features")]
     [IconsCombo([AST.Play2, UTL.ArrowLeft, AST.AstralDraw, AST.UmbralDraw])]
+    [ConflictingCombos(AstrologianPlay2AbilitiesFeature)]
     [CustomComboInfo("Play II to Astral/Umbral Draw", "Replace Play II with Astral/Umbral Draw when no Arrow/Bole is drawn.", AST.JobID)]
     AstrologianPlay2DrawFeature = 3330,
 
     [SectionCombo("Draw features")]
     [IconsCombo([AST.Play3, UTL.ArrowLeft, AST.AstralDraw, AST.UmbralDraw])]
+    [ConflictingCombos(AstrologianPlay3AbilitiesFeature)]
     [CustomComboInfo("Play III to Astral/Umbral Draw", "Replace Play III with Astral/Umbral Draw when no Spire/Ewer is drawn.", AST.JobID)]
     AstrologianPlay3DrawFeature = 3331,
 
@@ -207,6 +209,34 @@ public enum CustomComboPreset
     [ExpandedCustomCombo]
     [CustomComboInfo("Gravity to Astral/Umbral Draw", "Replace Gravity with with Astral/Umbral Draw when no card is drawn and you can draw.", AST.JobID)]
     AstrologianGravityDrawFeature = 3322,
+
+    [SectionCombo("Play II/III & Abilities Consolidation")]
+    [IconsCombo([AST.Play2, UTL.ArrowLeft, AST.Exaltation])]
+    [ConflictingCombos(AstrologianPlay2DrawFeature)]
+    [ExpandedCustomCombo]
+    [CustomComboInfo("Play II to Exaltation", "Replace Play II with Exaltation when no Arrow/Bole is drawn.", AST.JobID)]
+    AstrologianPlay2AbilitiesFeature = 3333,
+
+    [SectionCombo("Play II/III & Abilities Consolidation")]
+    [IconsCombo([AST.Play2, UTL.ArrowLeft, AST.CelestialIntersection])]
+    [ParentCombo(AstrologianPlay2AbilitiesFeature)]
+    [ExpandedCustomCombo]
+    [CustomComboInfo("Play II to Celestial Intersection", "Replace Play II with Celestial Intersection instead when no Arrow/Bole is drawn.", AST.JobID)]
+    AstrologianPlay2IntersectionFeature = 3334,
+
+    [SectionCombo("Play II/III & Abilities Consolidation")]
+    [IconsCombo([AST.Play3, UTL.ArrowLeft, AST.CelestialIntersection])]
+    [ConflictingCombos(AstrologianPlay3DrawFeature)]
+    [ExpandedCustomCombo]
+    [CustomComboInfo("Play III to Celestial Intersection", "Replace Play III with Celestial Intersection when no Spire/Ewer is drawn.", AST.JobID)]
+    AstrologianPlay3AbilitiesFeature = 3335,
+
+    [SectionCombo("Play II/III & Abilities Consolidation")]
+    [IconsCombo([AST.Play3, UTL.ArrowLeft, AST.Exaltation])]
+    [ParentCombo(AstrologianPlay3AbilitiesFeature)]
+    [ExpandedCustomCombo]
+    [CustomComboInfo("Play III to Exaltation", "Replace Play III with Exaltation instead when no Spire/Ewer is drawn.", AST.JobID)]
+    AstrologianPlay3ExaltationFeature = 3336,
 
     [SectionCombo("Minor Arcanas")]
     [IconsCombo([AST.Helios, UTL.ArrowLeft, AST.LadyofCrowns])]

@@ -38,6 +38,7 @@ internal static class AST
         Divination = 16552,
         CelestialOpposition = 16553,
         Malefic4 = 16555,
+        CelestialIntersection = 16556,
         Horoscope = 16557,
         NeutralSect = 16559,
         Play = 17055,
@@ -240,6 +241,32 @@ internal class AstrologianArcana : CustomCombo
             if (IsEnabled(CustomComboPreset.AstrologianHeliosArcanaFeature) && gauge.DrawnCrownCard == CardType.Lady && level >= AST.Levels.MinorArcana)
                 return OriginalHook(AST.MinorArcanaDT);
         }
+
+        return actionID;
+    }
+}
+
+internal class AstrologianPlay2Abilities : CustomCombo
+{
+    protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.AstrologianPlay2AbilitiesFeature;
+
+    protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
+    {
+        if (OriginalHook(actionID) == AST.Play2 && IsOriginal(AST.Play2))
+            return IsEnabled(CustomComboPreset.AstrologianPlay2IntersectionFeature) ? OriginalHook(AST.CelestialIntersection) : OriginalHook(AST.Exaltation);
+
+        return actionID;
+    }
+}
+
+internal class AstrologianPlay3Abilities : CustomCombo
+{
+    protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.AstrologianPlay3AbilitiesFeature;
+
+    protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
+    {
+        if (OriginalHook(actionID) == AST.Play3 && IsOriginal(AST.Play3))
+            return IsEnabled(CustomComboPreset.AstrologianPlay3ExaltationFeature) ? OriginalHook(AST.Exaltation) : OriginalHook(AST.CelestialIntersection);
 
         return actionID;
     }
