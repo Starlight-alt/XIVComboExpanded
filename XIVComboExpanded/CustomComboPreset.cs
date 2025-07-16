@@ -212,6 +212,19 @@ public enum CustomComboPreset
     [CustomComboInfo("Gravity-only to Arcana", "Only replace Gravity by Lord of Crowns when drawn.", AST.JobID)]
     AstrologianGravityOnlyArcanaFeature = 3328,
 
+    [SectionCombo("Major Arcana")]
+    [IconsCombo([AST.Spire, AST.Arrow, AST.Bole, AST.Ewer])]
+    [ExpandedCustomCombo]
+    [CustomComboInfo("Major Arcana", "Replace certain actions by Major Arcana cards of similar functions when drawn.", AST.JobID)]
+    AstrologianMajorArcanaFeature = 3329,
+
+    [SectionCombo("Major Arcana")]
+    [IconsCombo([AST.CelestialIntersection, UTL.ArrowLeft, AST.Spire])]
+    [ExpandedCustomCombo]
+    [ParentCombo(AstrologianMajorArcanaFeature)]
+    [CustomComboInfo("Celestial Intersection & The Spire", "Replace Celestial Intersection with The Spire when drawn.", AST.JobID)]
+    AstrologianSpireIntersectionFeature = 3330,
+
     [SectionCombo("Level Synchronization")]
     [IconsCombo([AST.Benefic, UTL.ArrowLeft, AST.Benefic2])]
     [ExpandedCustomCombo]

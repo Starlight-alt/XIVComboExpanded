@@ -38,6 +38,7 @@ internal static class AST
         Divination = 16552,
         CelestialOpposition = 16553,
         Malefic4 = 16555,
+        CelestialIntersection = 16556,
         Horoscope = 16557,
         NeutralSect = 16559,
         Play = 17055,
@@ -203,6 +204,26 @@ internal class AstrologianArcana : CustomCombo
         {
             if (IsEnabled(CustomComboPreset.AstrologianHeliosArcanaFeature) && gauge.DrawnCrownCard == CardType.Lady && level >= AST.Levels.MinorArcana)
                 return OriginalHook(AST.MinorArcanaDT);
+        }
+
+        return actionID;
+    }
+}
+
+internal class AstrologianMajorArcana : CustomCombo
+{
+    protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.AstrologianMajorArcanaFeature;
+
+    protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
+    {
+        var gauge = GetJobGauge<ASTGauge>();
+
+        if (actionID == AST.CelestialIntersection && IsEnabled(CustomComboPreset.AstrologianSpireIntersectionFeature))
+        {
+            if (gauge.DrawnCards.Contains(CardType.Spire))
+            {
+                return OriginalHook(AST.Play3);
+            }
         }
 
         return actionID;
