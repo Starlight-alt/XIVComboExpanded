@@ -226,6 +226,14 @@ internal class AstrologianMajorArcana : CustomCombo
             }
         }
 
+        if (actionID == AST.Exaltation && IsEnabled(CustomComboPreset.AstrologianBoleExaltationFeature))
+        {
+            if (gauge.DrawnCards.Contains(CardType.Bole))
+            {
+                return OriginalHook(AST.Play2);
+            }
+        }
+
         return actionID;
     }
 }

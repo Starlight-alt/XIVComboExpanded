@@ -225,6 +225,13 @@ public enum CustomComboPreset
     [CustomComboInfo("Celestial Intersection & The Spire", "Replace Celestial Intersection with The Spire when drawn.", AST.JobID)]
     AstrologianSpireIntersectionFeature = 3330,
 
+    [SectionCombo("Major Arcana")]
+    [IconsCombo([AST.Exaltation, UTL.ArrowLeft, AST.Bole])]
+    [ExpandedCustomCombo]
+    [ParentCombo(AstrologianMajorArcanaFeature)]
+    [CustomComboInfo("Exaltation & The Bole", "Replace Exaltation with The Bole when drawn.", AST.JobID)]
+    AstrologianBoleExaltationFeature = 3331,
+
     [SectionCombo("Level Synchronization")]
     [IconsCombo([AST.Benefic, UTL.ArrowLeft, AST.Benefic2])]
     [ExpandedCustomCombo]
