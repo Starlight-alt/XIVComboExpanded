@@ -232,6 +232,13 @@ public enum CustomComboPreset
     [CustomComboInfo("Exaltation & The Bole", "Replace Exaltation with The Bole when drawn.", AST.JobID)]
     AstrologianBoleExaltationFeature = 3331,
 
+    [SectionCombo("Major Arcana")]
+    [IconsCombo([AST.AspectedBenefic, UTL.ArrowLeft, AST.Ewer])]
+    [ExpandedCustomCombo]
+    [ParentCombo(AstrologianMajorArcanaFeature)]
+    [CustomComboInfo("Aspected Benefic & The Ewer", "Replace Aspected Benefic with The Ewer when drawn.", AST.JobID)]
+    AstrologianEwerAspectedBeneficFeature = 3332,
+
     [SectionCombo("Level Synchronization")]
     [IconsCombo([AST.Benefic, UTL.ArrowLeft, AST.Benefic2])]
     [ExpandedCustomCombo]

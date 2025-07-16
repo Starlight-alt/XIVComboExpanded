@@ -15,6 +15,7 @@ internal static class AST
         Benefic = 3594,
         Malefic = 3596,
         Malefic2 = 3598,
+        AspectedBenefic = 3595,
         Helios = 3600,
         AspectedHelios = 3601,
         Ascend = 3603,
@@ -231,6 +232,14 @@ internal class AstrologianMajorArcana : CustomCombo
             if (gauge.DrawnCards.Contains(CardType.Bole))
             {
                 return OriginalHook(AST.Play2);
+            }
+        }
+
+        if (actionID == AST.AspectedBenefic && IsEnabled(CustomComboPreset.AstrologianEwerAspectedBeneficFeature))
+        {
+            if (gauge.DrawnCards.Contains(CardType.Ewer))
+            {
+                return OriginalHook(AST.Play3);
             }
         }
 
