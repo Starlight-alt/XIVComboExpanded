@@ -223,7 +223,7 @@ internal class AstrologianMajorArcana : CustomCombo
 
         if (actionID == AST.CelestialIntersection && IsEnabled(CustomComboPreset.AstrologianSpireIntersectionFeature))
         {
-            if (gauge.DrawnCards.Contains(CardType.Spire))
+            if (gauge.DrawnCards.Contains(CardType.Spire) || (IsEnabled(CustomComboPreset.AstrologianEwerIntersectionFeature) && gauge.DrawnCards.Contains(CardType.Ewer)))
             {
                 if (IsEnabled(CustomComboPreset.AstrologianIntersectionFirstFeature) && level >= AST.Levels.CelestialIntersection && (GetRemainingCharges(AST.CelestialIntersection) == GetMaxCharges(AST.CelestialIntersection)))
                     return AST.CelestialIntersection;
@@ -233,7 +233,7 @@ internal class AstrologianMajorArcana : CustomCombo
 
         if (actionID == AST.Exaltation && IsEnabled(CustomComboPreset.AstrologianBoleExaltationFeature))
         {
-            if (gauge.DrawnCards.Contains(CardType.Bole))
+            if (gauge.DrawnCards.Contains(CardType.Bole) || (IsEnabled(CustomComboPreset.AstrologianArrowExaltationFeature) && gauge.DrawnCards.Contains(CardType.Arrow)))
             {
                 if (IsEnabled(CustomComboPreset.AstrologianExaltationFirstFeature) && level >= AST.Levels.Exaltation && IsCooldownUsable(AST.Exaltation))
                     return AST.Exaltation;
