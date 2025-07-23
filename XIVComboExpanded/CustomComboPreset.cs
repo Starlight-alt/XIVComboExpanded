@@ -213,44 +213,36 @@ public enum CustomComboPreset
     AstrologianGravityOnlyArcanaFeature = 3328,
 
     [SectionCombo("Major Arcana")]
-    [IconsCombo([AST.Spire, AST.Arrow, AST.Bole, AST.Ewer])]
-    [ExpandedCustomCombo]
-    [CustomComboInfo("Major Arcana", "Replace certain actions by Major Arcana cards of similar functions when drawn.", AST.JobID)]
-    AstrologianMajorArcanaFeature = 3329,
-
-    [SectionCombo("Major Arcana")]
     [IconsCombo([AST.CelestialIntersection, UTL.ArrowLeft, AST.Spire])]
     [ExpandedCustomCombo]
-    [ParentCombo(AstrologianMajorArcanaFeature)]
     [CustomComboInfo("Celestial Intersection & The Spire", "Replace Celestial Intersection with The Spire when drawn.", AST.JobID)]
-    AstrologianSpireIntersectionFeature = 3330,
+    AstrologianSpireIntersectionFeature = 3329,
 
     [SectionCombo("Major Arcana")]
     [IconsCombo([AST.CelestialIntersection, UTL.ArrowLeft, AST.Ewer])]
     [ExpandedCustomCombo]
     [ParentCombo(AstrologianSpireIntersectionFeature)]
     [CustomComboInfo("Also combo with The Ewer when drawn", "Replace Celestial Intersection with The Ewer when drawn.", AST.JobID)]
-    AstrologianEwerIntersectionFeature = 3335,
+    AstrologianEwerIntersectionFeature = 3330,
 
     [SectionCombo("Major Arcana")]
     [ExpandedCustomCombo]
     [ParentCombo(AstrologianSpireIntersectionFeature)]
     [CustomComboInfo("Use Celestial Intersection first", "Replace Celestial Intersection only when not at full charges.", AST.JobID)]
-    AstrologianIntersectionFirstFeature = 3333,
+    AstrologianIntersectionFirstFeature = 3331,
 
     [SectionCombo("Major Arcana")]
     [IconsCombo([AST.Exaltation, UTL.ArrowLeft, AST.Bole])]
     [ExpandedCustomCombo]
-    [ParentCombo(AstrologianMajorArcanaFeature)]
     [CustomComboInfo("Exaltation & The Bole", "Replace Exaltation with The Bole when drawn.", AST.JobID)]
-    AstrologianBoleExaltationFeature = 3331,
+    AstrologianBoleExaltationFeature = 3332,
 
     [SectionCombo("Major Arcana")]
     [IconsCombo([AST.Exaltation, UTL.ArrowLeft, AST.Arrow])]
     [ExpandedCustomCombo]
     [ParentCombo(AstrologianBoleExaltationFeature)]
     [CustomComboInfo("Also combo with The Arrow when drawn", "Replace Exaltation with The Arrow when drawn.", AST.JobID)]
-    AstrologianArrowExaltationFeature = 3336,
+    AstrologianArrowExaltationFeature = 3333,
 
     [SectionCombo("Major Arcana")]
     [ExpandedCustomCombo]
@@ -261,9 +253,8 @@ public enum CustomComboPreset
     [SectionCombo("Major Arcana")]
     [IconsCombo([AST.AspectedBenefic, UTL.ArrowLeft, AST.Ewer])]
     [ExpandedCustomCombo]
-    [ParentCombo(AstrologianMajorArcanaFeature)]
     [CustomComboInfo("Aspected Benefic & The Ewer", "Replace Aspected Benefic with The Ewer when drawn.", AST.JobID)]
-    AstrologianEwerAspectedBeneficFeature = 3332,
+    AstrologianEwerAspectedBeneficFeature = 3335,
 
     [SectionCombo("Level Synchronization")]
     [IconsCombo([AST.Benefic, UTL.ArrowLeft, AST.Benefic2])]

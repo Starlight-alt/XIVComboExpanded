@@ -215,7 +215,7 @@ internal class AstrologianArcana : CustomCombo
 
 internal class AstrologianMajorArcana : CustomCombo
 {
-    protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.AstrologianMajorArcanaFeature;
+    protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.AstAny;
 
     protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
     {
