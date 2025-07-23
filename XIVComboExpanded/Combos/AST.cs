@@ -81,7 +81,9 @@ internal static class AST
             Redraw = 40,
             Astrodyne = 50,
             MinorArcana = 70,
-            CrownPlay = 70;
+            CrownPlay = 70,
+            CelestialIntersection = 74,
+            Exaltation = 86;
     }
 }
 
@@ -223,7 +225,7 @@ internal class AstrologianMajorArcana : CustomCombo
         {
             if (gauge.DrawnCards.Contains(CardType.Spire))
             {
-                if (IsEnabled(CustomComboPreset.AstrologianIntersectionFirstFeature) && (GetRemainingCharges(AST.CelestialIntersection) == GetMaxCharges(AST.CelestialIntersection)))
+                if (IsEnabled(CustomComboPreset.AstrologianIntersectionFirstFeature) && level >= AST.Levels.CelestialIntersection && (GetRemainingCharges(AST.CelestialIntersection) == GetMaxCharges(AST.CelestialIntersection)))
                     return AST.CelestialIntersection;
                 return OriginalHook(AST.Play3);
             }
@@ -233,7 +235,7 @@ internal class AstrologianMajorArcana : CustomCombo
         {
             if (gauge.DrawnCards.Contains(CardType.Bole))
             {
-                if (IsEnabled(CustomComboPreset.AstrologianExaltationFirstFeature) && IsCooldownUsable(AST.Exaltation))
+                if (IsEnabled(CustomComboPreset.AstrologianExaltationFirstFeature) && level >= AST.Levels.Exaltation && IsCooldownUsable(AST.Exaltation))
                     return AST.Exaltation;
                 return OriginalHook(AST.Play2);
             }
