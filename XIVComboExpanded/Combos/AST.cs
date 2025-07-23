@@ -223,6 +223,8 @@ internal class AstrologianMajorArcana : CustomCombo
         {
             if (gauge.DrawnCards.Contains(CardType.Spire))
             {
+                if (IsEnabled(CustomComboPreset.AstrologianIntersectionFirstFeature) && (GetRemainingCharges(AST.CelestialIntersection) == GetMaxCharges(AST.CelestialIntersection)))
+                    return AST.CelestialIntersection;
                 return OriginalHook(AST.Play3);
             }
         }
@@ -231,6 +233,8 @@ internal class AstrologianMajorArcana : CustomCombo
         {
             if (gauge.DrawnCards.Contains(CardType.Bole))
             {
+                if (IsEnabled(CustomComboPreset.AstrologianExaltationFirstFeature) && IsCooldownUsable(AST.Exaltation))
+                    return AST.Exaltation;
                 return OriginalHook(AST.Play2);
             }
         }

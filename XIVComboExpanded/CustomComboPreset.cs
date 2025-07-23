@@ -226,11 +226,23 @@ public enum CustomComboPreset
     AstrologianSpireIntersectionFeature = 3330,
 
     [SectionCombo("Major Arcana")]
+    [ExpandedCustomCombo]
+    [ParentCombo(AstrologianSpireIntersectionFeature)]
+    [CustomComboInfo("Use Celestial Intersection first", "Replace Celestial Intersection only when not at full charges.", AST.JobID)]
+    AstrologianIntersectionFirstFeature = 3333,
+
+    [SectionCombo("Major Arcana")]
     [IconsCombo([AST.Exaltation, UTL.ArrowLeft, AST.Bole])]
     [ExpandedCustomCombo]
     [ParentCombo(AstrologianMajorArcanaFeature)]
     [CustomComboInfo("Exaltation & The Bole", "Replace Exaltation with The Bole when drawn.", AST.JobID)]
     AstrologianBoleExaltationFeature = 3331,
+
+    [SectionCombo("Major Arcana")]
+    [ExpandedCustomCombo]
+    [ParentCombo(AstrologianBoleExaltationFeature)]
+    [CustomComboInfo("Use Exaltation first", "Replace Exaltation only when on cooldown.", AST.JobID)]
+    AstrologianExaltationFirstFeature = 3334,
 
     [SectionCombo("Major Arcana")]
     [IconsCombo([AST.AspectedBenefic, UTL.ArrowLeft, AST.Ewer])]
